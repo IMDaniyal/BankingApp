@@ -1,0 +1,16 @@
+current directory: /Users/daniyal/Documents/bankingApp/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+/Users/daniyal/.asdf/installs/ruby/2.7.5/bin/ruby -I /Users/daniyal/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220102-21888-o7xz1d.rb extconf.rb
+creating Makefile
+
+current directory: /Users/daniyal/Documents/bankingApp/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /Users/daniyal/Documents/bankingApp/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/daniyal/Documents/bankingApp/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" install
+/opt/homebrew/bin/ginstall -c -m 0755 debug.bundle ./.gem.20220102-21888-1f9fl2x/debug
