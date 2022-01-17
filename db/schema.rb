@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_085026) do
+ActiveRecord::Schema.define(version: 2022_01_17_100939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 2022_01_17_085026) do
   end
 
   create_table "overdrafts", force: :cascade do |t|
-    t.integer "limit"
-    t.boolean "available"
-    t.integer "used_amount"
+    t.integer "limit", default: 0
+    t.boolean "available", default: false
+    t.integer "used_amount", default: 0
     t.bigint "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
