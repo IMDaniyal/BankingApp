@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        @user.branch = Current.branch
         if @user.save
             session[:user_id] = @user.id
             redirect_to root_path, notice: 'Thank you for signing up!'
