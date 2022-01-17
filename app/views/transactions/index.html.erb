@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>My Transactions</h1>
+
+<div id="transactions">
+  <% @transactions.each do |transaction| %>
+    <%= render transaction %>
+    <hr>
+  <% end %>
+</div>
+
+<%= link_to "Back to account", account_path(@account.id) %> |
+<%= link_to "Back to homepage", root_path %><br>

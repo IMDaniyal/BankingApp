@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'transactions/show'
-  get 'transactions/new'
-  get 'transactions/create'
+  resources :transactions, except: [:destroy, :new]
+  get 'transactions/new/:id' => "transactions#new", as: "new_transaction"
+  get 'transactions/bankstatement/:account_id' => "transactions#bank_statement", as: "bank_statement"
   resources :overdrafts, only: :show
   resources :accounts
   resources :users

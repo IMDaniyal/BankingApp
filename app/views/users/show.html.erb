@@ -1,0 +1,33 @@
+<h1> Profile </h1>
+<div id="<%= dom_id @user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Home Address:</strong>
+    <%= @user.home_address %>
+  </p>
+
+  <p>
+    <strong>Phone Number:</strong>
+    <%= @user.phone_number %>
+  </p>
+
+  <p>
+    <strong>Passport Number:</strong>
+    <%= @user.passport_no %>
+  </p>
+
+</div>
+
+<div>
+  <%= link_to "Update Profile", edit_user_path(@user.id) %> |
+  <%= link_to "Back to homepage", root_path %><br>
+</div>

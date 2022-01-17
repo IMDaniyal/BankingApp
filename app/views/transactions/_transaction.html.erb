@@ -1,0 +1,21 @@
+<div id="<%= dom_id transaction %>">
+  <p>
+    <strong>Source:</strong>
+    <%= transaction.source %> |
+
+    <strong>Amount:</strong>
+    <%= transaction.amount %> |
+
+    <strong>Time:</strong>
+    <%= transaction.created_at %>
+  </p>
+
+  <p>
+    <strong>Sender:</strong>
+    <%= transaction.sender %> |
+
+    <strong>Receiver:</strong>
+    <%= transaction.receiver %>
+  </p>
+
+</div>

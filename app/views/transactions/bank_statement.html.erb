@@ -1,0 +1,56 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bank Statement</h1>
+
+<p>
+    <strong>Name:</strong>
+    <%= @account.user.name %> |
+
+    <strong>Email:</strong>
+    <%= @account.user.email %> |
+
+    <% if @account.user.phone_number %>
+        <strong>Phone Number:</strong>
+        <%= @account.user.phone_number %>
+    <% end %>
+</p>
+
+<p>
+    <strong>Account Number:</strong>
+    <%= @account.account_number %> |
+
+    <% if @account.user.home_address %>
+        <strong>Home Address:</strong>
+        <%= @account.user.home_address %> |
+    <% end %>
+
+    <% if @account.user.passport_no %>
+        <strong>Passport Number:</strong>
+        <%= @account.user.passport_no %>
+    <% end %>
+</p>
+<hr>
+<p>
+    <strong>Opening Balance:</strong>
+    <%= @starting_balance %> |
+
+    <strong>Closing Balance:</strong>
+    <%= @account.balance %> |
+
+    <strong>Overdraft Amount Used:</strong>
+    <%= @account.overdraft.used_amount %>    
+
+</p>
+<hr>
+<% if @transactions.count > 0 %>
+    <div id="transactions">
+    <% @transactions.each do |transaction| %>
+        <%= render transaction %>
+        <hr>
+    <% end %>
+    </div>
+<% else %>
+ <div><h3>No Transactions to be displayed</h3></div>
+<% end %>
+<%= link_to "Back to account", account_path(@account.id) %> |
+<%= link_to "Back to homepage", root_path %><br>

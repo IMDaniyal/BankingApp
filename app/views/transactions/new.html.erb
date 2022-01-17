@@ -1,0 +1,44 @@
+<h1>Creating Transaction</h1>
+
+<%= form_with(model: @transaction) do |form| %>
+    <% if @transaction.errors.any? %>
+        <div style="color: red">
+            <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+        <ul>
+            <% @transaction.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+  
+
+    <div>
+        <%= form.label :amount, "Amount (£)", style: "display: block" %>
+        <%= form.number_field :amount %>
+    </div>
+
+    <%= form.hidden_field :source, value: "Credit" %>
+    <br>
+    <div>
+        <%= form.label :sender, style: "display: block" %>
+        <%= form.text_field :sender, value: "(#{@account.account_number}) #{@account.account_type.name}", readonly: true, size: 35 %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :receiver, style: "display: block" %>
+        <%= form.text_field :receiver, maxlength: 16, minlength: 12, size: 20 %>
+    </div>
+    <%= form.hidden_field :account_id, value: @account.id %>
+    <br>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to Homepage", root_path %>
+</div>

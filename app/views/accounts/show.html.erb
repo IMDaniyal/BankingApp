@@ -7,5 +7,8 @@
   <%= link_to "Back to homepage", root_path %><br>
 
   <br>
-  <%= button_to "Manage Overdraft", overdraft_path(@account.overdraft.id), method: :get %>
+  <%= button_to "Manage Overdraft", overdraft_path(@account.overdraft.id), method: :get %><br>
+  <%= button_to "Pay Someone", new_transaction_path(@account.id), method: :get %><br>
+  <%= button_to "My Transactions", transactions_path, method: :get %><br>
+  <%= button_to "Get Bank Statement", bank_statement_path(@account.id), method: :get %>
 </div>
