@@ -1,8 +1,7 @@
 <h1>Welcome to ABC Banking</h1>
 
 <% if Current.user %>
-  Logged in as: <%= Current.user.email %><br>
-  <%= button_to "Sign Out", logout_path,  method: :delete %>
+  <%= render "logged_in", account: @account, account_type: @account_type %>
   <% else %>
   <%= link_to "Sign up", sign_up_path %>
   <%= link_to "Sign In", sign_in_path %>

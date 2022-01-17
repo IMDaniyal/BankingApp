@@ -12,30 +12,20 @@
   <% end %>
 
   <div>
-    <%= form.label :balance, style: "display: block" %>
-    <%= form.number_field :balance %>
+    <%= form.label :account_type, "Select Account Type:", style: "display: block" %>
+    <%= form.select :account_type_id, options_for_select(account_type.map{ |v| [v.name,v.id] }) %>
   </div>
+
+  <br>
 
   <div>
     <%= form.label :pin, style: "display: block" %>
-    <%= form.number_field :pin %>
+    <%= form.password_field :pin, maxlength: 4, minlength: 4, size: 8 %>
   </div>
 
-  <div>
-    <%= form.label :account_number, style: "display: block" %>
-    <%= form.text_field :account_number %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :account_type_id, style: "display: block" %>
-    <%= form.text_field :account_type_id %>
-  </div>
-
+  <%= form.hidden_field :user_id, value: Current.user.id %>
+  
+  <br>
   <div>
     <%= form.submit %>
   </div>

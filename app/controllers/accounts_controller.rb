@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  include AccountNumberBuilder
   before_action :set_account, only: %i[ show edit update destroy ]
 
   # GET /accounts or /accounts.json
@@ -13,6 +14,7 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   def new
     @account = Account.new
+    @account_type = AccountType.all
   end
 
   # GET /accounts/1/edit
@@ -22,7 +24,7 @@ class AccountsController < ApplicationController
   # POST /accounts or /accounts.json
   def create
     @account = Account.new(account_params)
-
+    @account.account_number = build_account_number
     respond_to do |format|
       if @account.save
         format.html { redirect_to account_url(@account), notice: "Account was successfully created." }
@@ -52,7 +54,7 @@ class AccountsController < ApplicationController
     @account.destroy
 
     respond_to do |format|
-      format.html { redirect_to accounts_url, notice: "Account was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Account was successfully destroyed." }
       format.json { head :no_content }
     end
   end

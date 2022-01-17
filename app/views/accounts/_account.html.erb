@@ -1,12 +1,8 @@
+<h1> Manage your Account </h1>
 <div id="<%= dom_id account %>">
   <p>
     <strong>Balance:</strong>
     <%= account.balance %>
-  </p>
-
-  <p>
-    <strong>Pin:</strong>
-    <%= account.pin %>
   </p>
 
   <p>
@@ -15,13 +11,13 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= account.user_id %>
+    <strong>Owned by:</strong>
+    <%= account.user.name %>
   </p>
 
   <p>
     <strong>Account type:</strong>
-    <%= account.account_type_id %>
+    <%= account.account_type.name %>
   </p>
 
 </div>

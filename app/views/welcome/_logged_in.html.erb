@@ -1,0 +1,10 @@
+Logged in as: <%= Current.user.email %><br>
+<%= button_to "Sign Out", logout_path,  method: :delete %><br>
+<% if Current.user.accounts.empty? %>
+    <%= button_to "Apply for an Account", new_account_path,  method: :get %>
+    <% else %>
+    Manage your Account(s)
+    <% Current.user.accounts.each do |account| %>
+        <%= button_to account.account_type.name, account_path(account.id),  method: :get %>
+    <% end %>
+<% end %>
