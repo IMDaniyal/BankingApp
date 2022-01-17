@@ -4,6 +4,10 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :email
       t.string :password_digest
+      t.belongs_to :branch, null: false, foreign_key: true
+      t.string :home_address
+      t.string :phone_number
+      t.string :passport_no
 
       t.timestamps
     end

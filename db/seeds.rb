@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+city = City.create(name: "London")
+country = Country.create(name: "UK")
+branch = Branch.create(name: "Headquarters", city: city, country: country)
+
+current_account = AccountType.create(name: "Current")
+saving_account = AccountType.create(name: "Saving")
+student_account = AccountType.create(name: "Student")

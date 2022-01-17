@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  limit: 1
+  available: false
+  used_amount: 1
+  account: one
+
+two:
+  limit: 1
+  available: false
+  used_amount: 1
+  account: two
