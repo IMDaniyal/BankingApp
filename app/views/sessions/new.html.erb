@@ -2,11 +2,26 @@
 
 <%= form_with url: sign_in_path do |f| %>
 
-    <%= f.label :Email %>
-    <%= f.text_field :email %>
+    <div>
+        <%= f.label :Email %>
+        <%= f.text_field :email %>
+    </div>
 
-    <%= f.label :Password %>
-    <%= f.password_field :password %>
+    <br>
 
-    <%= f.submit "Sign in" %>
+    <div>
+        <%= f.label :Password %>
+        <%= f.password_field :password %>
+    </div>
+
+    <br>
+    <div>
+        <%= f.submit "Sign in" %>
+    </div>
 <% end %>
+
+<div>
+<br>
+  Don't have account? <br>
+  <%= link_to "Signup", sign_up_path %>
+</div>

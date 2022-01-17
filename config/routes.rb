@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'transactions/show'
+  get 'transactions/new'
+  get 'transactions/create'
   resources :overdrafts, only: :show
   resources :accounts
+  resources :users
   root to: 'welcome#index'
   get 'welcome/index'
-  resources :users
 
   get 'sign_up', to: 'users#new'
   post 'sign_up', to: 'users#create'
